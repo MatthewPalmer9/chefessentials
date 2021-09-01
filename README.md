@@ -24,7 +24,22 @@ I personally followed this tutorial in a Linux VM. Start in the terminal...
 |----------------------------------|--------------------------------------------------------|
 | Create cookbooks directory       | `mkdir cookbooks`                                      |
 | Inside, generate cookbook        | `chef generate cookbook exampleName`                   |
-| From main dir, copy webserver.rb | `cp webserver.rb cookbooks/exampleName/recipies/`      |
-| Run Chef Client                  | `sudo chef-client -z -o recipe[exampleName::webserver]`|
+| From main dir, copy webserver.rb | `cp webserver.rb cookbooks/exampleName/recipes/`      |
+| Run chef client                  | `sudo chef-client -z -o recipe[exampleName::webserver]`|
 
 ## Part 3 - Templates
+Start with `cd cookbooks/exampleName/`.
+
+| Terminal Steps                   |                  Command/file                          |
+|----------------------------------|--------------------------------------------------------|
+| Make templates directory         | `mkdir templates/default`                              |
+| Create a template `.erb` file    | `mycompany.html.erb`                                   |
+| Enter into `webserver.rb`        | `cd recipes/webserver.rb`                              |
+| Apply template resource          | `[See the webserver.rb in this repo]`                  |
+| Run chef client again            | `sudo chef-client -z -o recipe[exampleName::webserver]`|
+
+## Part 4 - Attributes
+| Terminal Steps                   |                  Command/file                          |
+|----------------------------------|--------------------------------------------------------|
+| make `runlist.json`              | `see the runlist.json file in main directory`          |
+| run chef client with -j          | `sudo chef-client -z -j runlist.json`                  |

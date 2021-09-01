@@ -1,0 +1,6 @@
+{
+    "run_list": ["recipe[exampleName::webserver"],
+    "exampleName": {
+        "companyName": "Run-list Attribute"
+    }
+}
