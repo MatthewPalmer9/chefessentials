@@ -1,5 +1,7 @@
 # Chef Essentials Configuration Automation
 
+## Part 1 - Hello World
+
 ### Setup
 I personally followed this tutorial in a Linux VM. Start in the terminal...
 
@@ -15,3 +17,14 @@ I personally followed this tutorial in a Linux VM. Start in the terminal...
 | Run The Server               |                      Command                    |
 |------------------------------|-------------------------------------------------|
 | Run webserver.rb             | `sudo chef-apply webserver.rb`                  |
+
+## Part 2 - Cookbook
+
+| Terminal Steps                   |                  Command                               |
+|----------------------------------|--------------------------------------------------------|
+| Create cookbooks directory       | `mkdir cookbooks`                                      |
+| Inside, generate cookbook        | `chef generate cookbook exampleName`                   |
+| From main dir, copy webserver.rb | `cp webserver.rb cookbooks/exampleName/recipies/`      |
+| Run Chef Client                  | `sudo chef-client -z -o recipe[exampleName::webserver]`|
+
+## Part 3 - Templates
